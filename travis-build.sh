@@ -76,4 +76,4 @@ make -j3
 ccache -s
 export ALL_VERSIONS=1
 make check
-
+src/stellar-core --test
