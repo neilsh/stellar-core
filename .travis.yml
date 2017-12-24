@@ -26,6 +26,9 @@ addons:
     - pkg-config
     - clang-format-5.0
 
+before_install
+  - pip install --user cpp-coveralls
+
 script: ./travis-build.sh
 
 cache:
