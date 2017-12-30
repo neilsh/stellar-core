@@ -55,7 +55,7 @@ case $committer in
         config_flags="--enable-asan --enable-ccache CXXFLAGS=-w"
 	;;
     *)
-	config_flags="--enable-asan --enable-ccache --enable-sdfprefs CXXFLAGS=-w"
+	config_flags="--enable-asan --enable-ccache --enable-sdfprefs --enable-gcov CXXFLAGS=-w"
 	;;
 esac
 
@@ -76,4 +76,4 @@ make -j3
 ccache -s
 export ALL_VERSIONS=1
 make check
-
+#  src/stellar-core --test '[bucket]'  # initially just trying a single test category		

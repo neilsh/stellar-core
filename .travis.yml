@@ -26,7 +26,13 @@ addons:
     - pkg-config
     - clang-format-5.0
 
+before_install:
+  - pip install --user cpp-coveralls
+
 script: ./travis-build.sh
+
+after_success:
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
 
 cache:
   directories:
@@ -37,8 +43,3 @@ notifications:
   email: false
   slack:
     secure: VYA87p8f6PgmOhL8b8DM4t6k8vPYjULpT7LBhvmNBNe8iiNDtTzLpRbUXg6t6Ij7Y3MU4uOJ5K617hCqs81VfRoOakbiYTWHeYSsMmIrUM4+d5MZM4pVP0/bCE49qt06bZINorh6IHChhfuvod3uyUqbgNrwRf/qDIIboFDIty8=
-
-branches:
- only:
- - auto
-
